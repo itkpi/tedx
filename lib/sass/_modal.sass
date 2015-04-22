@@ -1,0 +1,115 @@
+/************************************************************************************
+ * Modal window
+ *************************************************************************************/
+.modal_bg
+    position: fixed
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    margin: 0
+    overflow: auto
+    padding: 10px
+    visibility: hidden
+    opacity: 0
+    background: rgba(#fff, 0.3)
+    z-index: 100
+
+    -webkit-overflow-scrolling: touch
+    -webkit-animation-duration: 1s
+    -moz-animation-duration: 1s
+    animation-duration: 1s
+
+    -webkit-transition: all .5s ease
+    -moz-transition: all .5s ease
+    -ms-transition: all .5s ease
+    -o-transition: all .5s ease
+    transition: all .5s ease
+
+
+    &.visible
+        visibility: visible !important
+        opacity: 1 !important
+
+
+.modal_window
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    max-width: 90%
+    max-height: 98%
+    width: 465px
+    margin: auto
+    padding: 42px 41px
+    opacity: 0
+    display: table
+    overflow: auto
+    visibility: hidden
+    z-index: 102
+
+    -webkit-transform: scale(0.7)
+    -moz-transform: scale(0.7)
+    transform: scale(0.7)
+
+    -webkit-transition: transform .4s ease
+    -moz-transition: transform .4s ease
+    -o-transition: transform .4s ease
+    transition: transform .4s ease
+
+    &--full
+        max-width: 960px
+        width: auto
+        padding: 6px 30px 20px
+
+.modal_window.visible
+    visibility: visible !important
+    opacity: 1 !important
+    -webkit-transform: scale(1) !important
+    -moz-transform: scale(1) !important
+    transform: scale(1) !important
+
+
+.modal__title
+    color: $black
+    font-size: 38px
+    font-weight: 700
+    text-transform: uppercase
+
+.modal__t
+    margin-bottom: 20px
+    color: $black
+    font-size: 18px
+    font-weight: 300
+
+
+.modal__field
+    width: 100%
+    height: 50px
+    margin-bottom: 5px
+    line-height: 50px
+    background-color: #fff
+    border: 1px solid #b7b7b7
+    border-radius: 4px
+
+    box-sizing: border-box
+
+    color: $black
+    font-size: 16px
+    font-weight: 300
+
+.modal__btn
+    width: 1005
+    height: 62px
+    line-height: 62px
+    box-sizing: border-box
+
+    color: #ebeef2
+    text-transform: uppercase
+    font-size: 26px
+    font-weight: 500
+
+    background-color: $red
+    border: 1px solid #b83838
+    border-radius: 4px

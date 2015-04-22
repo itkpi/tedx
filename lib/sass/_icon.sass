@@ -1,0 +1,60 @@
+@import compass/utilities/sprites
+
+$icon-spacing: 20px
+$icon-sprite-dimensions: true
+
+
+@import icon/*.png
+@include all-icon-sprites
+
+i
+    display: inline-block
+    vertical-align: middle
+
+
+.icon-ticket
+    margin: 0 0 0 6%
+
+    @media screen and (max-width: 980px)
+        margin: 0
+
+[class^="icon-"],
+[class*=" icon-"]
+    display: inline-block
+    vertical-align: middle
+
+
+.icon-fb
+    &:hover
+        @extend .fb-active.fb-active
+
+.icon-vk
+    &:hover
+        @extend .icon-vk.vk-active
+
+.icon-tw
+    &:hover
+        @extend .icon-tw.tw-active
+
+
+
+
+
+.footer__info__col
+    .icon-fb
+        &.fb-active
+            @extend .animate
+            &:hover
+                -webkit-filter: grayscale(100%)
+
+    .icon-vk
+        &.vk-active
+            @extend .animate
+            &:hover
+                -webkit-filter: grayscale(100%)
+
+    .icon-tw
+        &.tw-active
+            @extend .animate
+            &:hover
+                -webkit-filter: grayscale(100%)
