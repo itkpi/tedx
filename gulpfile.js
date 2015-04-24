@@ -1,13 +1,12 @@
-var   gulp = require('gulp')
-    , notify = require("gulp-notify")
-    , csso = require('gulp-csso')
-    , uglify = require('gulp-uglify')
-    //, livereload = require('gulp-livereload')
-    , imagemin = require('gulp-imagemin')
-    , pngquant = require('imagemin-pngquant')
-    , connect = require('gulp-connect')
-    , compass = require( 'gulp-for-compass')
-    , concat = require('gulp-concat')
+var   gulp         = require('gulp')
+    , notify       = require("gulp-notify")
+    , csso         = require('gulp-csso')
+    , uglify       = require('gulp-uglify')
+    , imagemin     = require('gulp-imagemin')
+    , pngquant     = require('imagemin-pngquant')
+    , connect      = require('gulp-connect')
+    , compass      = require( 'gulp-for-compass')
+    , concat       = require('gulp-concat')
     , autoprefixer = require('gulp-autoprefixer')
     ;
 
@@ -48,10 +47,9 @@ gulp.task('compress-image', function () {
             progressive: true,
             svgoPlugins: [{removeViewBox: false}],
             use: [pngquant({ quality: '50-70', speed: 4 })],
-            //.pipe(pngquant({ quality: '65-80', speed: 4 })())
             interlaced: true
         }))
-        .pipe(gulp.dest('./public/'));
+        .pipe(gulp.dest('./lib/'));
 });
 
 
@@ -59,10 +57,10 @@ gulp.task('compress-image', function () {
 gulp.task('sass', function(){
     gulp.src('./lib/sass/**/*.sass')
         .pipe(compass({
-            sassDir: './lib/sass/',
-            cssDir: './lib/css/',
+            cssDir:    './lib/css/',
+            sassDir:   './lib/sass/',
+            fontsDir:  './lib/font/',
             imagesDir: './lib/pic/',
-            fontsDir: './lib/font/',
             force: true
         }))
         .pipe(connect.reload())
@@ -78,8 +76,9 @@ gulp.task('concat-js', function() {
             './lib/js/jquery.appear.js',
             './lib/js/app.js'
         ])
-        .pipe(concat('app.js'))
-        .pipe(gulp.dest('./public/js/'));
+        .pipe(concat('app.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('./lib/js/'));
 });
 
 
@@ -100,18 +99,18 @@ gulp.task('compress-css', function() {
             cascade: false
         }))
         .pipe(csso())
-        .pipe(gulp.dest('./public/css/'));
+        .pipe(gulp.dest('./lib/css/'));
 });
 
 
 //compress js
-gulp.task('compress-js', function() {
-    gulp.src('./public/js/*')
-        .pipe(uglify())
-        .pipe(gulp.dest('./public/js/'))
-});
+//gulp.task('compress-js', function() {
+//    gulp.src('./public/js/*')
+//        .pipe(uglify())
+//        .pipe(gulp.dest('./public/js/'))
+//});
 
 
 
-gulp.task('default', ['server', 'html', 'js', 'sass', 'watch']);
-gulp.task('production', ['sass', 'compress-js', 'concat-js', 'compress-css', 'compress-image']);
+gulp.task('default', ['server', 'html', 'concat-js', 'sass', 'watch']);
+gulp.task('production', ['compress-css', 'compress-image']);
