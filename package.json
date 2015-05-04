@@ -16,6 +16,7 @@
     "vinyl-fs": "^1.0.0"
   },
   "dependencies": {
-    "imagemin-pngquant": "^4.0.0"
+    "imagemin-pngquant": "^4.0.0",
+    "redis": "^0.12.1"
   }
 }
