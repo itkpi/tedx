@@ -2,12 +2,11 @@ var   gulp         = require('gulp')
     , notify       = require("gulp-notify")
     , csso         = require('gulp-csso')
     , uglify       = require('gulp-uglify')
-    , imagemin     = require('gulp-imagemin')
-    , pngquant     = require('imagemin-pngquant')
     , connect      = require('gulp-connect')
     , compass      = require( 'gulp-for-compass')
     , concat       = require('gulp-concat')
     , autoprefixer = require('gulp-autoprefixer')
+    , imageminJpegtran = require('imagemin-jpegtran')
     ;
 
 //server
@@ -40,15 +39,12 @@ gulp.task('js', function() {
 });
 
 
+
+
 //compress pic
 gulp.task('compress-image', function () {
     gulp.src('./lib/**/*')
-        .pipe(imagemin({
-            progressive: true,
-            svgoPlugins: [{removeViewBox: false}],
-            use: [pngquant({ quality: '50-70', speed: 4 })],
-            interlaced: true
-        }))
+        .pipe(imageminJpegtran({progressive: true})())
         .pipe(gulp.dest('./lib/'));
 });
 

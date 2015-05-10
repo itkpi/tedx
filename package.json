@@ -16,6 +16,8 @@
     "vinyl-fs": "^1.0.0"
   },
   "dependencies": {
+    "imagemin-jpegtran": "^4.1.0",
+    "imagemin-optipng": "^4.2.0",
     "imagemin-pngquant": "^4.0.0",
     "redis": "^0.12.1"
   }
