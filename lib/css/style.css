@@ -141,11 +141,11 @@ code, kbd, pre, samp {
 
 @font-face {
   font-family: "MyriadPro";
-  src: url('../font/MyriadPro-Regular.ttf?1431382586') format('truetype'), url('../font/MyriadPro-Regular.eot?1431382586') format('embedded-opentype'), url('../font/MyriadPro-Regular.woff?1431382586') format('woff'), url('../font/MyriadPro-Regular.svg?1431382586') format('svg');
+  src: url('../font/MyriadPro-Regular.ttf?1431382338') format('truetype'), url('../font/MyriadPro-Regular.eot?1431382338') format('embedded-opentype'), url('../font/MyriadPro-Regular.woff?1431382338') format('woff'), url('../font/MyriadPro-Regular.svg?1431382338') format('svg');
 }
 @font-face {
   font-family: "MyriadProBold";
-  src: url('../font/MyriadPro-Bold.otf?1431382586') format('opentype');
+  src: url('../font/MyriadPro-Bold.otf?1431382338') format('opentype');
 }
 /* line 23, ../sass/_main.sass */
 .c-red {
@@ -1159,7 +1159,7 @@ code, kbd, pre, samp {
 
 /* line 136, icon/*.png */
 .icon-sprite, .icon-down, .icon-fb, .icon-next, .icon-play, .icon-prev, .icon-ticket, .icon-top, .icon-tw, .icon-vk {
-  background-image: url('./lib/pic/icon-s7737f17131.png');
+  background-image: url('/./lib/pic/icon-s7737f17131.png');
   background-repeat: no-repeat;
 }
 
