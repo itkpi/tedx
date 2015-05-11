@@ -109,6 +109,6 @@ gulp.task('compress-css', function() {
 
 
 
-gulp.task('build-static', ['concat-js', 'sass']);
+gulp.task('build-static', ['sass', 'css', 'js', 'concat-js']);
 gulp.task('default', ['server', 'html', 'build-static', 'watch']);
 gulp.task('production', ['build-static', 'compress-css', 'compress-image']);
