@@ -53,6 +53,7 @@ gulp.task('compress-image', function () {
 gulp.task('sass', function(){
     gulp.src('./lib/sass/**/*.sass')
         .pipe(compass({
+            httpFontsPath:  '../font/',
             cssDir:    './lib/css/',
             sassDir:   './lib/sass/',
             fontsDir:  './lib/font/',
@@ -108,5 +109,6 @@ gulp.task('compress-css', function() {
 
 
 
-gulp.task('default', ['server', 'html', 'concat-js', 'sass', 'watch']);
-gulp.task('production', ['compress-css', 'compress-image']);
+gulp.task('build-static', ['concat-js', 'sass']);
+gulp.task('default', ['server', 'html', 'build-static', 'watch']);
+gulp.task('production', ['build-static', 'compress-css', 'compress-image']);
