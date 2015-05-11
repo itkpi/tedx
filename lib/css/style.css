@@ -141,11 +141,11 @@ code, kbd, pre, samp {
 
 @font-face {
   font-family: "MyriadPro";
-  src: url('../font/MyriadPro-Regular.ttf?1431381686') format('truetype'), url('../font/MyriadPro-Regular.eot?1431381686') format('embedded-opentype'), url('../font/MyriadPro-Regular.woff?1431381686') format('woff'), url('../font/MyriadPro-Regular.svg?1431381686') format('svg');
+  src: url('../font/MyriadPro-Regular.ttf?1431381419') format('truetype'), url('../font/MyriadPro-Regular.eot?1431381419') format('embedded-opentype'), url('../font/MyriadPro-Regular.woff?1431381419') format('woff'), url('../font/MyriadPro-Regular.svg?1431381419') format('svg');
 }
 @font-face {
   font-family: "MyriadProBold";
-  src: url('../font/MyriadPro-Bold.otf?1431381686') format('opentype');
+  src: url('../font/MyriadPro-Bold.otf?1431381419') format('opentype');
 }
 /* line 23, ../sass/_main.sass */
 .c-red {
