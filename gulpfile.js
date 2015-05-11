@@ -54,6 +54,7 @@ gulp.task('sass', function(){
     gulp.src('./lib/sass/**/*.sass')
         .pipe(compass({
             httpFontsPath:  '../font/',
+            httpImagesPath:  '../pic/',
             cssDir:    './lib/css/',
             sassDir:   './lib/sass/',
             fontsDir:  './lib/font/',
