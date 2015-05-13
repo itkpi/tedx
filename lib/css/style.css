@@ -927,6 +927,7 @@ code, kbd, pre, samp {
 .sponsors__in {
   max-width: 1140px;
   margin: 0 auto;
+  text-align: center;
 }
 
 /* line 688, ../sass/_main.sass */
