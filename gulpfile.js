@@ -3,7 +3,7 @@ var   gulp         = require('gulp')
     , csso         = require('gulp-csso')
     , uglify       = require('gulp-uglify')
     , connect      = require('gulp-connect')
-    , compass      = require( 'gulp-for-compass')
+    , compass      = require('gulp-for-compass')
     , concat       = require('gulp-concat')
     , autoprefixer = require('gulp-autoprefixer')
     , imageminJpegtran = require('imagemin-jpegtran')
@@ -53,8 +53,9 @@ gulp.task('compress-image', function () {
 gulp.task('sass', function(){
     gulp.src('./lib/sass/**/*.sass')
         .pipe(compass({
-            httpFontsPath:  '../font/',
-            httpImagesPath:  '../pic/',
+            //httpFontsPath:  '../font/',
+            //httpImagesPath:  '../pic/',
+            httpGeneratedImagesPath: '../pic/',
             cssDir:    './lib/css/',
             sassDir:   './lib/sass/',
             fontsDir:  './lib/font/',
@@ -70,8 +71,8 @@ gulp.task('sass', function(){
 gulp.task('concat-js', function() {
     return gulp.src([
             './lib/js/owl.carousel.js',
-            './lib/js/jquery.stellar.js',
-            './lib/js/jquery.appear.js',
+            //'./lib/js/jquery.stellar.js',
+            //'./lib/js/jquery.appear.js',
             './lib/js/app.js'
         ])
         .pipe(concat('app.min.js'))

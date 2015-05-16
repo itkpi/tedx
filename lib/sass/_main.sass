@@ -113,7 +113,7 @@ $red: #ff2b06
 .preview
     position: relative
     padding: 23% 0
-    background: url("../pic/bg-kpi.png") no-repeat
+    background: url("../pic/bg-kpi.jpg") no-repeat
     background-attachment: fixed
     background-size: cover
 
@@ -452,6 +452,31 @@ $red: #ff2b06
 
 
 
+.speaker__list
+    text-align: center
+    font-size: 0
+    margin-bottom: 150px
+
+.speaker__list__item
+    width: 29%
+    margin: 0 1% 30px
+    display: inline-block
+    vertical-align: top
+
+.speaker__list__img
+    width: 70%
+    margin-bottom: 30px
+    vertical-align: bottom
+
+.speaker__list__name
+    margin-bottom: 10px
+    font-size: 18px
+
+.speaker__list__text
+    font-size: 14px
+    line-height: 18px
+
+
 .program
     position: relative
     padding: 55px 0 0
@@ -595,7 +620,7 @@ $red: #ff2b06
         left: 0
         width: 100%
         height: 100%
-        background: url("../pic/bg-kpi.png") no-repeat 0 -250px
+        background: url("../pic/bg-kpi.jpg") no-repeat 0 -250px
         background-attachment: fixed
         background-size: cover
         z-index: -1
@@ -664,6 +689,7 @@ $red: #ff2b06
     display: block
     margin: 0 auto
     line-height: 88px
+    color: #fff
     font-size: 35px
     text-align: center
     text-transform: uppercase
@@ -686,15 +712,25 @@ $red: #ff2b06
     margin: 0 auto
     text-align: center
 
+    h2
+        text-align: left
+
 .sponsors__title
     @extend .speaker__title
     margin: 70px 47px 80px
 
+    &--min
+        font-size: 50px
+
 .sponsors__list__item
     width: 24%
-    margin: 0 4% 40px
+    margin: 0 0 60px
     display: inline-block
     text-align: center
+
+    &--full
+        width: 40%
+        margin: 0 32% 60px
 
     img
         width: auto
@@ -856,6 +892,7 @@ $red: #ff2b06
 
         &:hover
             color: darken($red, 10%)
+
 
 .footer__logo
     width: auto
