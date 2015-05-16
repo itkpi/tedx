@@ -44,6 +44,7 @@ $red: #ff2b06
     top: 0
     left: 0
     width: 100%
+    min-width: 768px
     height: 82px
     line-height: 82px
     background: #fff
@@ -884,6 +885,7 @@ $red: #ff2b06
 
 .footer
     @extend .clearfix
+    position: relative
     background: #000
     padding: 0 35px 0 45px
 
@@ -899,6 +901,17 @@ $red: #ff2b06
     margin: 40px 0
     float: left
 
+.logo-prolaby
+    position: absolute
+    left: 0
+    right: 0
+    margin: 38px auto 0
+
+    @media screen and (max-width: 960px)
+        right: 15%
+
+    @media screen and (max-width: 800px)
+        right: 20%
 
 .footer__info
     @extend .clearfix
