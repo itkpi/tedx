@@ -7,6 +7,7 @@ var   gulp         = require('gulp')
     , concat       = require('gulp-concat')
     , autoprefixer = require('gulp-autoprefixer')
     , imageminJpegtran = require('imagemin-jpegtran')
+    , imageminPngquant = require('imagemin-pngquant')
     ;
 
 //server
@@ -43,8 +44,9 @@ gulp.task('js', function() {
 
 //compress pic
 gulp.task('compress-image', function () {
-    gulp.src('./lib/**/*')
+    gulp.src('./lib//*')
         .pipe(imageminJpegtran({progressive: true})())
+        //.pipe(imageminPngquant({quality: '65-80', speed: 4})())
         .pipe(gulp.dest('./lib/'));
 });
 
