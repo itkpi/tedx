@@ -870,7 +870,7 @@ code, kbd, pre, samp {
   padding: 0 10px;
 }
 /* line 641, ../sass/_main.sass */
-.tickets__in .tickets__map {
+.tickets__in .tickets__map, .tickets__in .tickets__youtube {
   text-align: center;
 }
 
