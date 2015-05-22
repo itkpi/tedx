@@ -440,7 +440,7 @@ code, kbd, pre, samp {
 }
 
 /* line 271, ../sass/_main.sass */
-.speaker__title, .program__title, .sponsors__title, .command__title, .thanks__title {
+.speaker__title, .program__title, .sponsors__title, .team__title, .thanks__title {
   max-width: 1009px;
   margin: 0 auto 80px;
   color: #ff2b06;
@@ -449,7 +449,7 @@ code, kbd, pre, samp {
 }
 @media screen and (max-width: 1024px) {
   /* line 271, ../sass/_main.sass */
-  .speaker__title, .program__title, .sponsors__title, .command__title, .thanks__title {
+  .speaker__title, .program__title, .sponsors__title, .team__title, .thanks__title {
     padding: 0 20px;
   }
 }
@@ -997,21 +997,21 @@ code, kbd, pre, samp {
 }
 
 /* line 743, ../sass/_main.sass */
-.command {
+.team {
   padding: 75px 0 207px;
   background: url("../pic/bg-comand.jpg") no-repeat;
   background-size: cover;
 }
 
 /* line 748, ../sass/_main.sass */
-.command__title {
+.team__title {
   color: #fff;
   margin: 0;
   padding-bottom: 35px;
 }
 
 /* line 754, ../sass/_main.sass */
-.slider-command {
+.slider-team {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 60px;
