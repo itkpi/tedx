@@ -227,7 +227,7 @@ code, kbd, pre, samp {
 /* line 85, ../sass/_main.sass */
 .menu__item.online-stream:before {
   color: red;
-  content: "⬤ ";
+  content: "● ";
 }
 
 /* line 90, ../sass/_main.sass */
