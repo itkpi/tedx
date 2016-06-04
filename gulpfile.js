@@ -46,8 +46,11 @@ gulp.task('js', function() {
 gulp.task('compress-image', function () {
     gulp.src('./lib//*')
         .pipe(imageminJpegtran({progressive: true})())
-        //.pipe(imageminPngquant({quality: '65-80', speed: 4})())
+
         .pipe(gulp.dest('./lib/'));
+    gulp.src('./lib/image/*')
+        .pipe(imageminJpegtran({progressive: true})())
+        .pipe(imageminPngquant({quality: '65-80', speed: 4})())
 });
 
 
