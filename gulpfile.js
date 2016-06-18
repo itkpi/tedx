@@ -44,9 +44,8 @@ gulp.task('js', function() {
 
 //compress pic
 gulp.task('compress-image', function () {
-    gulp.src('./lib//*')
+    gulp.src('./lib/**')
         .pipe(imageminJpegtran({progressive: true})())
-
         .pipe(gulp.dest('./lib/'));
     gulp.src('./lib/image/*')
         .pipe(imageminJpegtran({progressive: true})())
