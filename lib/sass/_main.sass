@@ -29,6 +29,7 @@ $red: #ff2b06
     min-width: 768px
     overflow: hidden
     font-family: Arial
+    background: #000
 
 .container
     @extend .clearfix
@@ -47,7 +48,7 @@ $red: #ff2b06
     min-width: 768px
     height: 82px
     line-height: 82px
-    background: #fff
+    background: #000
     z-index: 20
 
     .container
@@ -67,12 +68,12 @@ $red: #ff2b06
     @extend .animate
     margin: 0 9px
     padding-bottom: 26px
-    color: #8e8e8e
+    color: #fff
     border-bottom: 7px solid transparent
 
     &.is-active,
     &:hover
-        color: #000
+        color: #ff2b06
         border-bottom: 7px solid #ff2b06
 
     @media screen and (max-width: 930px)
@@ -117,23 +118,13 @@ $red: #ff2b06
 
 .preview
     position: relative
-    padding: 23% 0
-    background: url("../pic/bg-kpi.jpg") no-repeat
-    background-attachment: fixed
+    padding: 10% 0
+    background: url("../pic/bg-kpi.jpg") no-repeat center center fixed
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
     background-size: cover
 
-    &:before
-        content: ''
-        position: absolute
-        top: 0
-        left: 2%
-        width: 100%
-        height: 100%
-        display: block
-        opacity: 0.7
-        background: url("../pic/x.png") no-repeat
-        background-size: contain
-        z-index: 0
 
 
 .preview__line
@@ -185,15 +176,20 @@ $red: #ff2b06
 
 
 .about
+
+    padding: 88px 0 188px
+    background: url("../pic/banner_about.png") no-repeat
+    background-size: 100%
+
+.about__header
+    padding: 0 25px
+.about__header, .about__article
     max-width: 1040px
     margin: 0 auto
-    padding: 88px 0 188px
-
-
 .about__title
     @extend .animate
     position: relative
-    margin-left: 100 / 1040 * 43%
+    margin-left: 100 / 1040 * 5%
     padding-top: 23px
     display: inline-block
     color: #f0f0f0
@@ -258,10 +254,11 @@ $red: #ff2b06
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif
 
 .text
-    margin: 0 0 25px 27px
+    margin: 0 25px 25px 27px
     line-height: 25px
     font-size: 20px
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif
+    text-align: justify 
 
 
 
@@ -271,7 +268,11 @@ $red: #ff2b06
     //width: 100%
     //display: table
     overflow: hidden
-
+    background: url('../pic/speaker_banner.png') no-repeat center center fixed
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
 .speaker__title
     max-width: 1349 - 170 * 2px
     margin: 0 auto 80px
@@ -485,6 +486,7 @@ $red: #ff2b06
 .program
     position: relative
     padding: 55px 0 0
+    color: #fff
 
     &:before
         content: ''
@@ -528,7 +530,7 @@ $red: #ff2b06
     text-align: center
     z-index: 10
 
-    border: 1px solid #747474
+    border: 2px solid #fff
     border-radius: 100%
 
     i
@@ -536,7 +538,7 @@ $red: #ff2b06
         -webkit-filter: grayscale(100%)
 
     &:hover
-        border: 1px solid #ff2b06
+        border: 2px solid #ff2b06
         i
             -webkit-filter: grayscale(0)
 
@@ -945,3 +947,32 @@ $red: #ff2b06
 
 .footer__copy
     color: #3e3d3d
+
+.main_info
+    position: center
+
+
+
+.tedx_theme
+    text-align: center
+    color: #fff
+    font-size: 60px
+
+
+.tedx_date
+    text-align: center
+    color: #e62b1e
+    font-size: 50px
+
+
+.button_main
+    text-align: center
+    padding-top: 15%
+    margin: auto
+    .button 
+        background-color: rgba(#fff, 0.8)
+        color: $black
+        padding: 15px 32px
+        text-align: center
+        display: inline-block
+        font-size: 20px
