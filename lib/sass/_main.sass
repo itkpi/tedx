@@ -464,15 +464,29 @@ $red: #ff2b06
     margin-bottom: 150px
 
 .speaker__list__item
-    width: 29%
+    width: 100%
     margin: 0 1% 30px
     display: inline-block
     vertical-align: top
+    color: #fff
 
 .speaker__list__img
     width: 70%
     margin-bottom: 30px
     vertical-align: bottom
+    max-width: 300px
+
+.speaker__list__left, .speaker__list__right
+    width: 49%
+    display: inline-block
+    padding: 0 5px
+
+.speaker__list__left
+    text-align: right
+    float: left
+
+.speaker__list__right
+    text-align: left
 
 .speaker__list__name
     margin-bottom: 10px
@@ -481,6 +495,10 @@ $red: #ff2b06
 .speaker__list__text
     font-size: 14px
     line-height: 18px
+    span
+        font-style: italic
+        margin-bottom: 10px
+        display: inline-block
 
 
 .program

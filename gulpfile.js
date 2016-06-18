@@ -40,14 +40,13 @@ gulp.task('js', function() {
 });
 
 
-
-
 //compress pic
 gulp.task('compress-image', function () {
-    gulp.src('./lib/**')
+    gulp.src('./lib/**.jpg')
         .pipe(imageminJpegtran({progressive: true})())
         .pipe(gulp.dest('./lib/'));
-    gulp.src('./lib/image/*')
+        
+    gulp.src('./lib/image/**')
         .pipe(imageminJpegtran({progressive: true})())
         .pipe(imageminPngquant({quality: '65-80', speed: 4})())
 });
