@@ -8,6 +8,7 @@ var   gulp         = require('gulp')
     , autoprefixer = require('gulp-autoprefixer')
     , imageminJpegtran = require('imagemin-jpegtran')
     , imageminPngquant = require('imagemin-pngquant')
+    , imageResize = require('gulp-image-resize');
     ;
 
 //server
@@ -45,10 +46,16 @@ gulp.task('compress-image', function () {
     gulp.src('./lib/**.jpg')
         .pipe(imageminJpegtran({progressive: true})())
         .pipe(gulp.dest('./lib/'));
+
+    gulp.src('./lib/pic/**')
+        .pipe(imageResize({ width : 1280 }))
+        .pipe(gulp.dest('./lib/pic/'));
         
     gulp.src('./lib/image/**')
+        .pipe(imageResize({ width : 300 }))
         .pipe(imageminJpegtran({progressive: true})())
-        .pipe(imageminPngquant({quality: '65-80', speed: 4})())
+        .pipe(imageminPngquant({quality: '65-80', speed: 4})())        
+        .pipe(gulp.dest('./lib/image/'));
 });
 
 

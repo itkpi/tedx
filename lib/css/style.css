@@ -688,7 +688,7 @@ code, kbd, pre, samp {
 
 /* line 479, ../sass/_main.sass */
 .speaker__list__left, .speaker__list__right {
-  width: 49%;
+  width: 48.5%;
   display: inline-block;
   padding: 0 5px;
 }
@@ -719,16 +719,15 @@ code, kbd, pre, samp {
 .speaker__list__text span {
   font-style: italic;
   margin-bottom: 10px;
-  display: inline-block;
 }
 
-/* line 504, ../sass/_main.sass */
+/* line 503, ../sass/_main.sass */
 .program {
   position: relative;
   padding: 55px 0 0;
   color: #fff;
 }
-/* line 509, ../sass/_main.sass */
+/* line 508, ../sass/_main.sass */
 .program:before {
   content: "";
   position: absolute;
@@ -741,7 +740,7 @@ code, kbd, pre, samp {
   background-size: contain;
 }
 
-/* line 520, ../sass/_main.sass */
+/* line 519, ../sass/_main.sass */
 .program__in {
   position: relative;
   max-width: 992px;
@@ -749,7 +748,7 @@ code, kbd, pre, samp {
   overflow: hidden;
 }
 
-/* line 529, ../sass/_main.sass */
+/* line 528, ../sass/_main.sass */
 .program__list {
   max-height: 650px;
   padding-right: 80px;
@@ -757,9 +756,10 @@ code, kbd, pre, samp {
   overflow-y: scroll;
 }
 @media screen and (max-width: 1024px) {
-  /* line 529, ../sass/_main.sass */
+  /* line 528, ../sass/_main.sass */
   .program__list {
     max-height: 475px;
+    padding-left: 25px;
   }
 }
 
@@ -1312,7 +1312,7 @@ code, kbd, pre, samp {
 
 /* line 136, icon/*.png */
 .icon-sprite, .icon-down, .icon-fb, .icon-next, .icon-play, .icon-prev, .icon-ticket, .icon-top, .icon-tw, .icon-vk {
-  background-image: url('../pic/icon-s8d35ad76fe.png');
+  background-image: url('../pic/icon-scab8bcbd6a.png');
   background-repeat: no-repeat;
 }
 
