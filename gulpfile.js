@@ -3,10 +3,12 @@ var   gulp         = require('gulp')
     , csso         = require('gulp-csso')
     , uglify       = require('gulp-uglify')
     , connect      = require('gulp-connect')
-    , compass      = require( 'gulp-for-compass')
+    , compass      = require('gulp-for-compass')
     , concat       = require('gulp-concat')
     , autoprefixer = require('gulp-autoprefixer')
     , imageminJpegtran = require('imagemin-jpegtran')
+    , imageminPngquant = require('imagemin-pngquant')
+    , imageResize = require('gulp-image-resize');
     ;
 
 //server
@@ -39,13 +41,21 @@ gulp.task('js', function() {
 });
 
 
-
-
 //compress pic
 gulp.task('compress-image', function () {
-    gulp.src('./lib/**/*')
+    gulp.src('./lib/**.jpg')
         .pipe(imageminJpegtran({progressive: true})())
         .pipe(gulp.dest('./lib/'));
+
+    gulp.src('./lib/pic/**')
+        .pipe(imageResize({ width : 1280 }))
+        .pipe(gulp.dest('./lib/pic/'));
+        
+    gulp.src('./lib/image/**')
+        .pipe(imageResize({ width : 300 }))
+        .pipe(imageminJpegtran({progressive: true})())
+        .pipe(imageminPngquant({quality: '65-80', speed: 4})())        
+        .pipe(gulp.dest('./lib/image/'));
 });
 
 
@@ -53,6 +63,8 @@ gulp.task('compress-image', function () {
 gulp.task('sass', function(){
     gulp.src('./lib/sass/**/*.sass')
         .pipe(compass({
+            httpFontsPath:  '../font/',
+            httpGeneratedImagesPath: '../pic/',
             cssDir:    './lib/css/',
             sassDir:   './lib/sass/',
             fontsDir:  './lib/font/',
@@ -68,8 +80,8 @@ gulp.task('sass', function(){
 gulp.task('concat-js', function() {
     return gulp.src([
             './lib/js/owl.carousel.js',
-            './lib/js/jquery.stellar.js',
-            './lib/js/jquery.appear.js',
+            //'./lib/js/jquery.stellar.js',
+            //'./lib/js/jquery.appear.js',
             './lib/js/app.js'
         ])
         .pipe(concat('app.min.js'))
@@ -108,5 +120,6 @@ gulp.task('compress-css', function() {
 
 
 
-gulp.task('default', ['server', 'html', 'concat-js', 'sass', 'watch']);
-gulp.task('production', ['compress-css', 'compress-image']);
+gulp.task('build-static', ['sass', 'css', 'js', 'concat-js']);
+gulp.task('default', ['server', 'html', 'build-static', 'watch']);
+gulp.task('production', ['build-static', 'compress-css', 'compress-image']);
