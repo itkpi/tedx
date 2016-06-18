@@ -119,7 +119,7 @@ $red: #ff2b06
 .preview
     position: relative
     padding: 10% 0
-    background: url("../pic/bg-kpi.jpg") no-repeat center center fixed
+    background: url("../pic/bg-kpi.jpg") no-repeat center center 
     -webkit-background-size: cover
     -moz-background-size: cover
     -o-background-size: cover
@@ -176,10 +176,12 @@ $red: #ff2b06
 
 
 .about
-
     padding: 88px 0 188px
-    background: url("../pic/banner_about.png") no-repeat
-    background-size: 100%
+    background: url("../pic/banner_about.png") no-repeat center center fixed
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
 
 .about__header
     padding: 0 25px
@@ -268,7 +270,7 @@ $red: #ff2b06
     //width: 100%
     //display: table
     overflow: hidden
-    background: url('../pic/speaker_banner.png') no-repeat center center fixed
+    background: url('../pic/speaker_banner.png') no-repeat center center 
     -webkit-background-size: cover
     -moz-background-size: cover
     -o-background-size: cover
@@ -553,12 +555,9 @@ $red: #ff2b06
 
     i
         @extend .animate
-        -webkit-filter: grayscale(100%)
 
     &:hover
-        border: 2px solid #ff2b06
-        i
-            -webkit-filter: grayscale(0)
+        border: 2px solid #ff2b06        
 
 .program__next
     top: auto
