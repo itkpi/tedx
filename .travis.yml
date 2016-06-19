@@ -8,7 +8,7 @@ cache:
 env:
   global:
   - CREDENTIALS: "./.tedxftp"
-    FTP_DIR: "/tmp/web/"
+    FTP_DIR: "/web/"
     GH_REPO_SLUG: itkpi/tedx
     GH_REF: github.com/${GH_REPO_SLUG}.git
   - secure: aOkmFPtJsFLxOvzKFEyvh5PxNxZ/eU3MszSNX6XqNsKcoMCfA1ESMGe07pEpOp7xFkTLB+tG9ihGM+E24tv4yZuzZXc4+re7UC7S+2CuacKjJfvHUQPxpccDEEwes2njx3d1rYu58V3IyuBllsGnD9divPCZBxQMQ++WLk/RaPI=
