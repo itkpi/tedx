@@ -23,8 +23,7 @@ addons:
     - ruby
 install:
 - npm i gulp -g
-- npm i readable-stream
-- npm i
+- npm i || exit 0
 - gem update --system
 - gem install sass compass
 script:
