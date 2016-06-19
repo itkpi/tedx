@@ -15,7 +15,7 @@ gh-deploy: build
 	git init && \
 	git config user.email "it@kpi.pp.ua" && \
 	git config user.name "IT KPI (from CI)" && \
-	echo "tedx.kpi.ua" > CNAME && \
+	# echo "tedx.kpi.ua" > CNAME && \
 	git add . && \
 	git commit -m "Deploy TEDx KPI to gh-pages" && \
 	git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
