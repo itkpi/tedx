@@ -27,5 +27,5 @@ ftp-deploy: build
 .PHONY: deploy
 deploy: build
 	touch "build/deployed at `date`"
-	make ftp-deploy
 	make gh-deploy
+	make ftp-deploy
