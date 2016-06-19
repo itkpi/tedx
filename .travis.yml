@@ -19,6 +19,7 @@ addons:
   apt:
     packages:
     - pngquant
+    - graphicsmagick-imagemagick-compat
     - ncftp
     - ruby
 install:
