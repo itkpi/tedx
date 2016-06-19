@@ -19,6 +19,7 @@ sudo: true
 addons:
   apt:
     packages:
+    - pngquant
     - ncftp
     - ruby
 install:
