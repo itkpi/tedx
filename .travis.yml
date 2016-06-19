@@ -1,0 +1,39 @@
+language: node_js
+node_js:
+- '5.1'
+cache:
+  directories:
+  - node_modules
+  - ".sass-cache"
+env:
+  global:
+  - CREDENTIALS: "./.tedxftp"
+    FTP_DIR: "/tmp/web/"
+    GH_REPO_SLUG: itkpi/tedx
+    GH_REF: github.com/${GH_REPO_SLUG}.git
+  - secure: aOkmFPtJsFLxOvzKFEyvh5PxNxZ/eU3MszSNX6XqNsKcoMCfA1ESMGe07pEpOp7xFkTLB+tG9ihGM+E24tv4yZuzZXc4+re7UC7S+2CuacKjJfvHUQPxpccDEEwes2njx3d1rYu58V3IyuBllsGnD9divPCZBxQMQ++WLk/RaPI=
+  - secure: XMPFsq1xKadKyZMic4ATBGxbH65TswiKobCbWr/5CPErCiBNZSTsDz442v97334ALZGDuzgmRTLNerbeqhSRyiJjWF/YYZ7oAFbPZYAx0vtCnRpJXYI2QDia6NUEtjPCHFuxxnq8bceZ4ihPzHvw/Jgv3CbLr0uG9v8Cc8RblUc=
+  - secure: deXaER9bsbpkPb/niIKraQcL3NP4OXVRNx33dDHWFHXHh7dQzc5c3EHaOQGk8PEVwmBJo+uQXOotTWfU5c8cu2Nr3WuQN0eyDwEtMguS3CXYuVPAlWZjocUdHFc625rcttdn8g3L3J1SuUeow3k0BD6aNJwaoRBZdo0Z3pG1Ae8=
+  - secure: oipqUF6LdhkIoFi6s785EH8lq95ksWposlzazfS2RzFGbWbKhsa1B+mucwh8OU7BTX0CdZNKWdOei4wciz3A5Y7MtmWThgQ7oM72vTFQ9u/s3DmXSchyCgStzSgCsZf6Hg6PhHCl4c0hx54Fi+HybDVRZBLBwRw86cXxMz2o+FE=
+sudo: true
+addons:
+  apt:
+    packages:
+    - ncftp
+    - ruby
+install:
+- npm i gulp -g
+- npm i
+- gem update --system
+- gem install sass compass
+script:
+- make build
+after_success:
+- echo "host $FTP_HOST" > $CREDENTIALS
+- echo "user $FTP_USER" >> $CREDENTIALS
+- echo "pass $FTP_PASS" >> $CREDENTIALS
+- chmod 600 $CREDENTIALS
+- '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_REPO_SLUG}" = "${GH_REPO_SLUG}"
+  ]  && make deploy'
+- echo > $CREDENTIALS
+- rm -f $CREDENTIALS
