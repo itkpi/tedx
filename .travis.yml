@@ -22,8 +22,8 @@ addons:
     - ncftp
     - ruby
 install:
-- npm i gulp -g
-- npm i
+- npm i -g gulp marked
+- npm i --only=prod
 - gem update --system
 - gem install sass compass
 script:
