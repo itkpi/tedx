@@ -22,7 +22,7 @@ gh-deploy: build
 
 .PHONY: ftp-deploy
 ftp-deploy: build
-	time ncftpput -m -R -v -f "$CREDENTIALS" "$FTP_DIR" build/*
+	ncftpput -m -R -v -f "$CREDENTIALS" "$FTP_DIR" build/*
 
 .PHONY: deploy
 deploy: build
