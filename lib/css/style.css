@@ -363,7 +363,7 @@ code, kbd, pre, samp {
   margin-left: 0.48077%;
   padding-top: 23px;
   display: inline-block;
-  color: #f0f0f0;
+  color: #000;
   line-height: 1;
   font-size: 120px;
   font-family: MyriadProBold;
@@ -407,7 +407,7 @@ code, kbd, pre, samp {
   position: absolute;
   top: 0;
   left: 0;
-  color: #f0f0f0;
+  color: #ff2b06;
   font-size: 23px;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
