@@ -124,7 +124,7 @@ gulp.task('copy-src',function() {
     .pipe(gulp.dest('./build'))
   gulp.src(['./lib/font/*'])
     .pipe(gulp.dest('./build/lib/font'))
-  gulp.src(['./lib/js/*'])
+  gulp.src(['./lib/js/app.min.js'])
     .pipe(gulp.dest('./build/lib/js'))
 });
 
