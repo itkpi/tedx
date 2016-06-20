@@ -251,31 +251,30 @@
 		</div>
 	</section>
 
-<section class="tickets" id="tickets">
+	<section class="tickets" id="tickets">
  		<div class="tickets__in">
  			<h3 class="tickets__title-big">
  				TED<span class="x">x</span><span class="f-reg">KPI</span>
  			</h3>
 
-            <h4 class="tickets__title"  id="map">Дістатись до місця проведення конференції</h4>
-
-            <p class="tickets__text">
-            Пішки від станції метро "Політехнічний інститут".
-            </p>
-
-            <div class="tickets__map">
-	            <iframe src="https://www.google.com/maps/embed?pb=!1m32!1m8!1m3!1d2540.5490599020713!2d30.462018!3d50.4494996!3m2!1i1024!2i768!4f13.1!4m21!3e2!4m3!3m2!1d50.4507246!2d30.466583099999998!4m3!3m2!1d50.4499011!2d30.463405199999997!4m3!3m2!1d50.4484323!2d30.462752899999998!4m3!3m2!1d50.4488323!2d30.4610578!4m3!3m2!1d50.4483447!2d30.4608183!5e0!3m2!1suk!2sua!4v1432207194049" width="600" height="450" frameborder="0" style="border:0"></iframe>
-            </div>
-
-            <p class="tickets__text">
-            Автомобілем. Заїзд на територію університетського містечка з вулиці Академіка Янгеля.
-            </p>
-
-            <div class="tickets__map">
-	            <iframe src="https://www.google.com/maps/embed?pb=!1m32!1m12!1m3!1d2540.5909666611387!2d30.455242865383227!3d50.44871911276778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m17!3e0!4m3!3m2!1d50.4484151!2d30.4531024!4m3!3m2!1d50.447649899999995!2d30.4595183!4m3!3m2!1d50.448114499999996!2d30.4594968!4m3!3m2!1d50.447936899999995!2d30.460644799999997!5e0!3m2!1suk!2sua!4v1432207824689" width="600" height="450" frameborder="0" style="border:0"></iframe>
-            </div>
+            <h4 class="tickets__title" id="map">Дістатися до місця проведення конференції</h4>
+		    <div id="save-widget">
+			    <h5>Місце проведення TEDxKPI: night</h5>
+			    <p>
+					Музей знаходиться за адресою: <address><strong>проспект Перемоги, 37/6</strong></address>
+			    </p>
+			    <p>
+					На авто можна заїхати з вулиці Академіка Янгеля
+			    </p>
+		    </div>
 		</div>
+        <div id="map_iframe" data-zoom="17"></div>
 	</section>
+
+	<!-- <section id="map_block">
+            <h4 class="tickets tickets__in tickets__title" id="map">Дістатися до місця проведення конференції</h4>
+	            <div id="mapif0" data-zoom="16" style="height: 55vh; position: absolute; left: 0; right: 0;"></div>
+	</section> -->
 
 
 	<section class="team" id="team">
@@ -455,10 +454,11 @@
 	</div>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" defer></script>
-<script defer>window.jQuery || document.write('<script src="lib/js/jquery-2.1.1.min.js"><\/script>')</script>
+<script defer>window.jQuery || document.write('<script src="lib/js/jquery-2.1.1.min.js" defer><\/script>')</script>
 <script src="lib/js/app.min.js" defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAM6W0Yn4E5FX8WijUP3GRdmy0CT-53Lv0&amp;callback=showMap&amp;language=en" defer></script>
 
-<script>
+<script async>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

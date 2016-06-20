@@ -82,11 +82,11 @@ gulp.task('concat-js', function() {
             './lib/js/owl.carousel.js',
             //'./lib/js/jquery.stellar.js',
             //'./lib/js/jquery.appear.js',
-            './lib/js/app.js'
+            './lib/js/app.js',
+            './lib/js/map.js'
         ])
         .pipe(concat('app.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('./build/lib/js/'))
         .pipe(gulp.dest('./lib/js/'));
 });
 
@@ -96,7 +96,7 @@ gulp.task('watch', function () {
     gulp.watch('./index.html', ['html']);
     gulp.watch('./lib/sass/**/*', ['sass']);
     gulp.watch('./lib/css/**/*', ['css']);
-    gulp.watch('./lib/js/**/*', ['js']);
+    gulp.watch('./lib/js/**/*', ['concat-js', 'js']);
 });
 
 
@@ -124,6 +124,8 @@ gulp.task('copy-src',function() {
     .pipe(gulp.dest('./build'))
   gulp.src(['./lib/font/*'])
     .pipe(gulp.dest('./build/lib/font'))
+  gulp.src(['./lib/js/*'])
+    .pipe(gulp.dest('./build/lib/js'))
 });
 
 gulp.task('build-static', ['sass', 'css', 'js', 'concat-js','copy-src']);
