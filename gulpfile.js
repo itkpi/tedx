@@ -119,15 +119,17 @@ gulp.task('compress-css', function() {
 //        .pipe(gulp.dest('./public/js/'))
 //});
 
-gulp.task('copy-src',['build-static'],function() {
+gulp.task('copy-src',['build-static', 'compress-css', 'compress-image'],function() {
   gulp.src(['./index.html','./favicon.*'])
     .pipe(gulp.dest('./build'))
   gulp.src(['./lib/font/*'])
     .pipe(gulp.dest('./build/lib/font'))
+  gulp.src(['./lib/css/*'])
+    .pipe(gulp.dest('./build/lib/css'))
   gulp.src(['./lib/js/app.min.js'])
     .pipe(gulp.dest('./build/lib/js'))
 });
 
 gulp.task('build-static', ['sass', 'css', 'js', 'concat-js']);
 gulp.task('default', ['server', 'html', 'build-static', 'watch']);
-gulp.task('production', ['build-static', 'compress-css', 'compress-image','copy-src']);
+gulp.task('production', ['build-static', 'copy-src']);
