@@ -30,3 +30,4 @@ node_modules
 build/
 icon-*.png
 style.css
+app.min.js

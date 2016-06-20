@@ -86,7 +86,8 @@ gulp.task('concat-js', function() {
         ])
         .pipe(concat('app.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('./build/lib/js/'));
+        .pipe(gulp.dest('./build/lib/js/'))
+        .pipe(gulp.dest('./lib/js/'));
 });
 
 
