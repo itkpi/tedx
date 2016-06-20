@@ -30,7 +30,6 @@ install:
 - gem install sass compass
 script:
 - make build
-- ls -Ralh {build/,}lib/
 after_success:
 - echo "host $FTP_HOST" > $CREDENTIALS
 - echo "user $FTP_USER" >> $CREDENTIALS
