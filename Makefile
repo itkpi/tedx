@@ -3,6 +3,8 @@ run:
 	gulp
 
 build:
+	# Hack for having compass task completed before css compression and copying
+	gulp sass
 	gulp production
 
 .PHONY: clean

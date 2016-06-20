@@ -9,6 +9,7 @@
     "gulp-concat-css": "2.3.0",
     "gulp-connect": "2.3.1",
     "gulp-csso": "1.1.0",
+    "gulp-exit": "0.0.2",
     "gulp-for-compass": "0.0.2",
     "gulp-image-resize": "0.8.0",
     "gulp-imagemin": "2.4.0",

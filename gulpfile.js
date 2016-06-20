@@ -8,7 +8,8 @@ var   gulp         = require('gulp')
     , autoprefixer = require('gulp-autoprefixer')
     , imageminJpegtran = require('imagemin-jpegtran')
     , imageminPngquant = require('imagemin-pngquant')
-    , imageResize = require('gulp-image-resize');
+    , imageResize = require('gulp-image-resize')
+    , exit = require('gulp-exit')
     ;
 
 //server
@@ -72,7 +73,8 @@ gulp.task('sass', function(){
             force: true
         }))
         .pipe(connect.reload())
-        .pipe(notify("Compile SASS"));
+        .pipe(notify("Compile SASS"))
+        .pipe(exit());
 });
 
 
