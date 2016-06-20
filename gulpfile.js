@@ -128,6 +128,6 @@ gulp.task('copy-src',function() {
     .pipe(gulp.dest('./build/lib/js'))
 });
 
-gulp.task('build-static', ['sass', 'css', 'js', 'concat-js','copy-src']);
+gulp.task('build-static', ['sass', 'css', 'js', 'concat-js']);
 gulp.task('default', ['server', 'html', 'build-static', 'watch']);
-gulp.task('production', ['build-static', 'compress-css', 'compress-image']);
+gulp.task('production', ['copy-src','build-static', 'compress-css', 'compress-image']);
