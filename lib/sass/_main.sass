@@ -831,7 +831,8 @@ $red: #ff2b06
 
     &:hover
         //z-index: 2
-
+        .slider__item__img
+            -webkit-filter: grayscale(0%)
         .slider__item__box__text
             opacity: 1
             visibility: visible
@@ -846,14 +847,15 @@ $red: #ff2b06
     height: 100%
     background-size: cover
     background-position: 50% 50%
+    -webkit-filter: grayscale(100%)
 
 .slider__item__box__text
     @extend .animate
     position: absolute
-    top: 0
+    bottom: 0
     left: 0
     width: 100%
-    height: 100%
+    height: 30%
     opacity: 0
     color: #fff
     visibility: hidden
@@ -865,7 +867,7 @@ $red: #ff2b06
     &:before
         content: ''
         position: absolute
-        top: 50%
+        top: 90%
         left: 0
         right: 0
         width: 100 / 250 * 111%
@@ -876,9 +878,11 @@ $red: #ff2b06
 
 
 .slider__item__name
-    position: absolute
+    // position: absolute
+    display: inline-block
+    vertical-align: middle
     width: 100%
-    bottom: 55%
+    // bottom: 10%
     text-transform: uppercase
     font-size: 25px
 
