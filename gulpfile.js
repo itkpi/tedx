@@ -59,6 +59,8 @@ gulp.task('compress-image', function () {
         .pipe(imageminJpegtran({progressive: true})())
         .pipe(imageminPngquant({quality: '65-80', speed: 4})())
         .pipe(gulp.dest('./build/lib/image/'));
+    gulp.src('./lib/image/**/*.svg')
+        .pipe(gulp.dest('./build/lib/image/'));
 });
 
 
@@ -90,7 +92,7 @@ gulp.task('concat-js', function() {
         ])
         .pipe(concat('app.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('./lib/js/'));
+        .pipe(gulp.dest('./build/lib/js/'));
 });
 
 
