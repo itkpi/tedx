@@ -54,7 +54,7 @@ gulp.task('compress-image', function () {
         .pipe(imageResize({ width : 1280 }))
         .pipe(gulp.dest('./build/lib/pic/'));
 
-    gulp.src('./lib/image/**')
+    gulp.src('./lib/image/**.{png,jpg}')
         .pipe(imageResize({ width : 300 }))
         .pipe(imageminJpegtran({progressive: true})())
         .pipe(imageminPngquant({quality: '65-80', speed: 4})())
