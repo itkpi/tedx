@@ -13,7 +13,7 @@ clean:
 
 .PHONY: gh-deploy
 gh-deploy: build
-	cd build && \
+	@cd build && \
 	git init && \
 	git config user.email "it@kpi.pp.ua" && \
 	git config user.name "IT KPI (from CI)" && \
