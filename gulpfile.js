@@ -123,7 +123,7 @@ gulp.task('compress-css', function() {
 //});
 
 gulp.task('copy-src',['build-static', 'compress-css', 'compress-image'],function() {
-  gulp.src(['./index.html','./favicon.*'])
+  gulp.src(['./*.html','./favicon.*'])
     .pipe(gulp.dest('./build'))
   gulp.src(['./lib/font/*'])
     .pipe(gulp.dest('./build/lib/font'))
