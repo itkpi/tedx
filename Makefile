@@ -14,6 +14,7 @@ clean:
 .PHONY: gh-deploy
 gh-deploy: build
 	@cd build && \
+	touch "deployed at `date`" && \
 	git init && \
 	git config user.email "it@kpi.pp.ua" && \
 	git config user.name "IT KPI (from CI)" && \
@@ -28,6 +29,5 @@ ftp-deploy: build
 
 .PHONY: deploy
 deploy: build
-	touch "build/deployed at `date`"
 	make gh-deploy
 	make ftp-deploy
