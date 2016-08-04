@@ -11,7 +11,8 @@ env:
   - CREDENTIALS: "./.tedxftp"
   - FTP_DIR: "/web/"
   - GH_REPO_SLUG: itkpi/tedx
-  - GH_REF: github.com/${GH_REPO_SLUG}.git
+  - GH_REF: github.com/${TRAVIS_REPO_SLUG}.git
+  - GH_REPO_URL: git://${TRAVIS_REPO_SLUG}
   - secure: oipqUF6LdhkIoFi6s785EH8lq95ksWposlzazfS2RzFGbWbKhsa1B+mucwh8OU7BTX0CdZNKWdOei4wciz3A5Y7MtmWThgQ7oM72vTFQ9u/s3DmXSchyCgStzSgCsZf6Hg6PhHCl4c0hx54Fi+HybDVRZBLBwRw86cXxMz2o+FE=
 
 addons:
@@ -30,7 +31,9 @@ install:
 
 script:
 - make build
+- git fetch --unshallow
 - git clone .git build/old-website
+#- git clone ${GH_REPO_URL} build/old-website
 
 after_success: openssl aes-256-cbc -K $encrypted_5156c71c2a5e_key -iv $encrypted_5156c71c2a5e_iv -in .tedxftp.enc -out .tedxftp -d
 deploy:
