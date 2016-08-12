@@ -37,7 +37,7 @@ script:
 #- git clone ${GH_REPO_URL} build/old-website
 - cd build/old-website
 - git reset --hard ${TEDX_V1_SHA}
-- cp ../../Makefile
+- cp -v ../../Makefile .
 - make build
 - rm -rf .git
 - cd ../..
