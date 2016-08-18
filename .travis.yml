@@ -33,7 +33,7 @@ install:
 script:
 - make build
 - git fetch --unshallow
-- git fetch --all
+- git fetch --tags
 - git clone --branch ${TEDX_V1_SHA} .git build/old-website
 #- git clone ${GH_REPO_URL} build/old-website
 - cd build/old-website
