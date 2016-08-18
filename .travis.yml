@@ -33,13 +33,12 @@ install:
 script:
 - make build
 - git fetch --unshallow
-- git clone .git build/old-website
+- git clone --branch ${TEDX_V1_SHA} .git build/old-website
 #- git clone ${GH_REPO_URL} build/old-website
 - cd build/old-website
-- git reset --hard ${TEDX_V1_SHA}
+- rm -rf .git
 - cp -v ../../Makefile .
 - make build
-- rm -rf .git
 - cd ../..
 
 after_success: openssl aes-256-cbc -K $encrypted_5156c71c2a5e_key -iv $encrypted_5156c71c2a5e_iv -in .tedxftp.enc -out .tedxftp -d
