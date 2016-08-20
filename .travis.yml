@@ -13,7 +13,7 @@ env:
   - GH_REPO_SLUG: itkpi/tedx
   - GH_REF: github.com/${TRAVIS_REPO_SLUG}.git
   - GH_REPO_URL: git://${TRAVIS_REPO_SLUG}
-  - TEDX_V1_SHA: v1.1
+  - TEDX_V1_SHA: v1.2
   - secure: oipqUF6LdhkIoFi6s785EH8lq95ksWposlzazfS2RzFGbWbKhsa1B+mucwh8OU7BTX0CdZNKWdOei4wciz3A5Y7MtmWThgQ7oM72vTFQ9u/s3DmXSchyCgStzSgCsZf6Hg6PhHCl4c0hx54Fi+HybDVRZBLBwRw86cXxMz2o+FE=
 
 addons:
