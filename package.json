@@ -18,7 +18,13 @@
     "gulp-uglify": "1.5.3",
     "imagemin-jpegtran": "4.3.2",
     "imagemin-optipng": "4.3.0",
-    "imagemin-pngquant": "4.2.2",
-    "vinyl-fs": "2.4.3"
-  }
+    "imagemin-pngquant": "5.1.0",
+    "vinyl-fs": "2.4.3",
+    "snyk": "^1.85.0"
+  },
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "snyk": true
 }
